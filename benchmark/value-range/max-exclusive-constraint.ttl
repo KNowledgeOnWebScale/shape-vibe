@@ -1,0 +1,18 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:MaxExclusiveExampleShape
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#MaxExclusiveConstraintComponent> ;
+    a sh:NodeShape ;
+    rdfs:label "Max exclusive Example" ;
+    rdfs:comment "The value of the property ex:hasKeys should be a literal representing a number which is smaller than 1 (exclusive 2)." ;
+    sh:property [
+        sh:path ex:hasKeys ;
+        sh:maxExclusive 2 ;
+    ] .
+
+# Targeting
+ex:MaxExclusiveExampleShape
+    sh:targetNode ex:alice, ex:bob .
