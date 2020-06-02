@@ -9,3 +9,4 @@ Therefore the `benchmark` directory contains the following folders
 
 * `value-type`
 * `cardinality`
+* `value-range`
