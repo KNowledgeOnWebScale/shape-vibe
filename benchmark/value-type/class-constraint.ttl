@@ -1,0 +1,20 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:ClassExampleShape
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#ClassConstraintComponent> ;
+    rdfs:label "Class Example" ;
+    rdfs:comment "The value of the property ex:address should be declared as instance of the class ex:PostalAddress." ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path ex:address ;
+        sh:class ex:PostalAddress ;
+    ] .
+
+# Targeting
+ex:ClassExampleShape
+    sh:targetNode ex:bob, ex:alice, ex:carol .
+

@@ -1,0 +1,20 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:DatatypeExampleShape
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#DatatypeConstraintComponent> ;
+    rdfs:label "Datatype Example" ;
+    rdfs:comment "The value of the property ex:age should be a literal with the datatype xsd:integer." ;
+    sh:property [
+        sh:path ex:age ;
+        sh:datatype xsd:integer ;
+    ] .
+
+
+# Targeting
+ex:DatatypeExampleShape
+    sh:targetNode ex:alice, ex:bob, ex:carol .
