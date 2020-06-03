@@ -1,0 +1,18 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:DisjointExampleShape
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#DisjointConstraintComponent> ;
+    rdfs:label "Disjoint Example" ;
+    rdfs:comment "The value of the property ex:prefLabel has to be disjoint from the value of the property ex:altLabel." ;
+    sh:property [
+        sh:path ex:prefLabel ;
+        sh:disjoint ex:altLabel ;
+    ] .
+
+# Targeting
+ex:DisjointExampleShape
+    sh:targetNode ex:usa, ex:germany .

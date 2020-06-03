@@ -1,0 +1,18 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:EqualExampleShape
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#EqualsConstraintComponent> ;
+    rdfs:label "Equals Example" ;
+    rdfs:comment "The value of the property ex:firstName has to be equal to the value of the property ex:givenName." ;
+    sh:property [
+        sh:path ex:firstName ;
+        sh:equals ex:givenName ;
+    ] .
+
+# Targeting
+ex:EqualExampleShape
+    sh:targetNode ex:bob, ex:alice .
