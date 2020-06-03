@@ -1,0 +1,18 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:MinLengthExampleShape
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#MinLengthConstraintComponent> ;
+    rdfs:label "Min length Example" ;
+    rdfs:comment "The value of the property ex:password should be a literal with minimum string length 8." ;
+    sh:property [
+        sh:path ex:password ;
+        sh:minLength 8 ;
+    ] .
+
+# Targeting
+ex:MinLengthExampleShape
+    sh:targetNode ex:alice, ex:bob .
