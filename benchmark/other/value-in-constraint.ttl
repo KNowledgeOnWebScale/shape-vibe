@@ -1,0 +1,19 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:InExampleShape
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#InConstraintComponent> ;
+    rdfs:label "Value-in Example" ;
+    rdfs:comment "The values of the property ex:color should be one of the provided list, i.e. ex:pink or ex:purple." ;
+    sh:property [
+        sh:path ex:color ;
+        sh:in ( ex:pink ex:purple ) ;
+    ] .
+
+# Targeting
+ex:InExampleShape
+    sh:targetNode ex:rainbowPony .
+

@@ -1,0 +1,22 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:IgnoredPropertiesExample
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#ClosedConstraintComponent> ;
+    rdfs:label "Ignored properties Example" ;
+    rdfs:comment "Each value node may only have the two properties ex:firstName and ex:lastName, but could also have the property rdf:type." ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
+    sh:property [
+        sh:path ex:firstName ;
+    ] ;
+    sh:property [
+        sh:path ex:lastName ;
+    ] .
+
+# Targeting
+ex:ClosedShapeExampleShape
+    sh:targetNode ex:alice, ex:bob .
