@@ -3,16 +3,15 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 # Shape
-ex:PatternExampleShape
+ex:FlagsExampleShape
     a sh:NodeShape ;
-    rdfs:seeAlso <https://www.w3.org/TR/shacl/#PatternConstraintComponent> ;
-    rdfs:label "Pattern Example" ;
-    rdfs:comment "The value of the property ex:bCode should be a literal with the regular expression '^B'." ;
+    rdfs:label "Flags Example" ;
     sh:property [
         sh:path ex:bCode ;
         sh:pattern "^B" ;    # starts with 'B'
+        sh:flags "i" ;       # Ignore case
     ] .
 
 # Targeting
-ex:PatternExampleShape
+ex:FlagsExampleShape
     sh:targetNode ex:bob, ex:alice, ex:carol .

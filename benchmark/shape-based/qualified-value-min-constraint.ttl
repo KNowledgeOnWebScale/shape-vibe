@@ -3,11 +3,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 # Shape
-ex:QualifiedValueShapeExampleShape
+ex:QualifiedValueMinShape
     a sh:NodeShape ;    
     rdfs:seeAlso <https://www.w3.org/TR/shacl/#QualifiedValueShapeConstraintComponent> ;
-    rdfs:label "Qualified Value Example" ;
-    rdfs:comment "There should be exactly two ex:biologicalParent properties and exactly one value of the property ex:biologicalParent should comply with the provided qualifiedValueShape." ;
+    rdfs:label "Qualified Min Example" ;
+    rdfs:comment "There should be exactly two ex:biologicalParent properties and at least one value of the property ex:biologicalParent should comply with the provided qualifiedValueShape." ;
     sh:property [
         sh:path ex:biologicalParent;
         sh:minCount 2 ;
@@ -17,10 +17,9 @@ ex:QualifiedValueShapeExampleShape
                 sh:hasValue ex:female ;
         ] ;
         sh:qualifiedMinCount 1 ;
-        sh:qualifiedMaxCount 1 ;
     ] .
 
 # Targeting
-ex:QualifiedValueShapeExampleShape
+ex:QualifiedValueMinShape
     sh:targetNode ex:child1, ex:child2 .
 
