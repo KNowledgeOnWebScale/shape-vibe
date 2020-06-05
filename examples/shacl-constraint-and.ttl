@@ -1,0 +1,28 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:SuperShape
+    a sh:NodeShape ;
+    sh:property [
+        sh:path ex:property ;
+        sh:minCount 1 ;
+    ] .
+
+ex:ExampleAndShape
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#AndConstraintComponent> ;
+    a sh:NodeShape ;
+    rdfs:label "Example And Shape" ;
+    rdfs:comment "Each value node should conform to ex:SuperShape and the blank node shape." ;
+    sh:and (
+        ex:SuperShape
+        [
+            sh:path ex:property ;
+            sh:maxCount 1 ;
+        ]
+    ) .
+
+# Targeting
+ex:ExampleAndShape
+    sh:targetNode ex:validInstance, ex:invalidInstance .

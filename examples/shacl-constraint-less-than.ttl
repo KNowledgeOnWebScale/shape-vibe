@@ -1,0 +1,20 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:LessThanExampleShape
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#LessThanConstraintComponent> ;
+    rdfs:label "Less Than Exmaple" ;
+    rdfs:comment "Values of the property ex:startDate should be less than values of the property ex:endDate." ;
+    sh:property [
+        sh:path ex:startDate ;
+        sh:lessThan ex:endDate ;
+    ] .
+
+# Targeting
+ex:LessThanExampleShape
+    sh:targetNode ex:event1, ex:event2 .
+
+

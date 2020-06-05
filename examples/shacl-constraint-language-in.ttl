@@ -1,0 +1,18 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:NewZealandLanguagesShape
+        a sh:NodeShape ;
+        rdfs:seeAlso <https://www.w3.org/TR/shacl/#LanguageInConstraintComponent> ;
+        rdfs:label "New Zealand languages" ;
+        rdfs:comments "The values of the property ex:prefLabel should be literals with either the language 'en' or 'mi'." ;
+        sh:property [
+                sh:path ex:prefLabel ;
+                sh:languageIn ( "en" "mi" ) ;
+        ] .
+
+# Targeting
+ex:NewZealandLanguagesShape
+    sh:targetNode ex:mountain, ex:berg .

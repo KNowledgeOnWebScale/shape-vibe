@@ -1,0 +1,24 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:ClosedExampleShape
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#ClosedConstraintComponent> ;
+    rdfs:label "Closed Example" ;
+    rdfs:comment "Each value node may only have the three properties rdf:type, ex:firstName and ex:lastName." ;
+    sh:closed true ;
+    sh:property [
+       sh:path rdf:type ;
+    ] ;
+    sh:property [
+        sh:path ex:firstName ;
+    ] ;
+    sh:property [
+        sh:path ex:lastName ;
+    ] .
+
+# Targeting
+ex:ClosedShapeExampleShape
+    sh:targetNode ex:alice, ex:bob .

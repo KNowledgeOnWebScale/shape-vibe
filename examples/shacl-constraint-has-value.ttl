@@ -1,0 +1,19 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:StanfordGraduate
+    a sh:NodeShape ;
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#HasValueConstraintComponent> ;
+    rdfs:label "Has value Example" ;
+    rdfs:comment "At least one value of a property ex:alumniOf should have the value ex:Stanford." ;
+    sh:property [
+        sh:path ex:alumniOf ;
+        sh:hasValue ex:Stanford ;
+    ] .
+
+# Targeting
+ex:StanfordGraduate
+    sh:targetNode ex:alice, ex:bob .
+

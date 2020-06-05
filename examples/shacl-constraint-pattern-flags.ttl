@@ -1,0 +1,17 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:FlagsExampleShape
+    a sh:NodeShape ;
+    rdfs:label "Flags Example" ;
+    sh:property [
+        sh:path ex:bCode ;
+        sh:pattern "^B" ;    # starts with 'B'
+        sh:flags "i" ;       # Ignore case
+    ] .
+
+# Targeting
+ex:FlagsExampleShape
+    sh:targetNode ex:bob, ex:alice, ex:carol .
