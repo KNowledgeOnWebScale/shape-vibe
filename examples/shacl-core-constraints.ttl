@@ -1,0 +1,160 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# ex:biologicalParents covers
+#  - min cardinality
+#  - max cardinality
+#  - qualified min
+#  - qualified max
+#  - has value
+#  - class
+
+ex:biologicalParentsShape
+    a sh:NodeShape ;    
+    rdfs:seeAlso <https://www.w3.org/TR/shacl/#QualifiedValueShapeConstraintComponent> ;
+    rdfs:label "Parents" ;
+    rdfs:comment "There should be exactly two ex:biologicalParent properties and at least one value of the property ex:biologicalParent should comply with the provided qualifiedValueShape." ;
+    sh:property [
+        sh:path ex:biologicalParent;
+        sh:class ex:Person ;
+        sh:minCount 2 ;
+        sh:maxCount 2 ;
+        sh:qualifiedValueShape [
+                sh:path ex:gender ;
+                sh:hasValue ex:female ;
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+    ] .
+
+# ex:personShape covers
+#  - not
+#  - node kind
+#  - property 
+#  - or
+#  - and 
+#  - pattern
+#  - flags
+#  - min length
+#  - max length
+#  - equals
+
+ex:personShape
+  a sh:NodeShape ;
+  sh:nodeKind sh:IRI ;
+  sh:not ex:organizationShape ;
+  sh:or (
+    [
+      sh:path ex:fullName ;
+      sh:maxCount 1
+    ]
+    [
+      sh:and (
+        [
+          sh:path ex:givenName ;
+          sh:minCount 1;
+          sh:equals ex:firstName ;
+        ]
+        [
+          sh:path ex:familyName ;
+          sh:minCount 1;
+        ]
+     )
+    ]
+  ) ;
+  sh:property ex:validBirthDate ;
+  sh:property [
+    sh:path ex:address ;
+    sh:node ex:addressShape ;
+  ] ;
+  sh:property [
+    sh:path ex:bicycle ;
+    sh:node ex:bicycleShape ;
+  ] ;
+  sh:property [
+    sh:path ex:emailAddress ;
+    sh:pattern "^.*@.*" ;
+    sh:flags "i" ;
+    sh:minLength 3 ;
+    sh:maxLength 320 ;
+  ] .
+
+
+# ex:organizationShape covers
+#  - disjoint
+#  - language in
+#  - unique lang
+#  - minCount
+
+ex:organizationShape
+  a sh:NodeShape ;
+  rdfs:label "Organization" ;
+  sh:property [
+    sh:path ex:prefLabel ;
+    sh:disjoint ex:altLabel ;
+    sh:languageIn ("en" "de" "nl") ;
+    sh:uniqueLang true ;
+  ] ;
+  sh:property [
+    sh:path ex:hasCEO ;
+    sh:minCount 1 ;
+  ] .
+
+ex:bicycleShape
+  a sh:NodeShape ;
+  sh:property [
+    sh:path ex:manufacturingDate ;
+    sh:lessThan ex:recyclingDate ;
+  ] ;
+  sh:property [
+    sh:path ex:manufacturer ;
+    sh:in ("m1" "m2" "m3") ;
+  ] .
+
+# ex:validBirthDate covers
+#  - minCount
+#  - maxCount
+#  - datatype
+
+ex:validBirthDate
+  a sh:PropertyShape ;
+  sh:path ex:birthDate ;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:datatype xsd:date ;
+  sh:lessThanOrEquals ex:deathDate .
+
+# ex:addressShape covers
+#  - xone
+#  - min count
+#  - min exclusive
+#  - min inclusive
+#  - max exclusive
+#  - max inclusive
+ex:addressShape
+  a sh:NodeShape ;
+  rdfs:label "Address" ;
+  sh:xone (
+    [
+      sh:path ex:postalCode ;
+      sh:minCount 1 ;
+    ]
+    [
+      sh:path ex:zipCode ;
+      sh:minCount 1 ;
+      sh:minExclusive 1000 ;
+      sh:maxExclusive 10000 ;
+    ]
+    [
+      sh:path ex:postleitzahl ;
+      sh:minCount 1 ;
+      sh:minInclusive 10000 ;
+      sh:maxInclusive 99999 ;
+    ]
+
+  ) .
+
+ex:personShape sh:targetNode ex:sven .
+
