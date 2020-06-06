@@ -111,7 +111,7 @@ ex:organizationShape
 ex:bicycleShape
   a sh:NodeShape ;
   sh:closed true ;
-  sh:ignoredProperties ( rdf:type, rdfs:label)
+  sh:ignoredProperties ( rdf:type rdfs:label) ;
   sh:property [
     sh:path ex:manufacturingDate ;
     sh:lessThan ex:recyclingDate ;
