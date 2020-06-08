@@ -1,0 +1,13 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:MyShape
+        a sh:NodeShape ;
+        sh:targetNode ex:MyInstance ;
+        sh:property [  
+                sh:path ex:myProperty ;
+                sh:maxLength 10 ;
+                sh:message "Too many characters"@en ;
+                sh:message "Zu viele Zeichen"@de ;
+        ] .
