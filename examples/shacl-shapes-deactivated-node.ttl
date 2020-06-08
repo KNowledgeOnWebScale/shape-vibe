@@ -14,7 +14,7 @@ ex:PersonShape
     sh:property [
         sh:path ex:birthDate ;
         sh:maxCount 1 ;
-    ] ;
+    ] .
 
 ex:PersonShape-name
     a sh:PropertyShape ;
@@ -24,5 +24,5 @@ ex:PersonShape-name
 
 # Targeting
 ex:PersonShape
-  sh:targetClass ex:Person ;
+  sh:targetClass ex:Person .
 

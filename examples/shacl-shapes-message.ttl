@@ -5,7 +5,7 @@
 
 ex:MessageExample
         a sh:NodeShape ;
-        rdfs:seeAlso <https://www.w3.org/TR/shacl/#message> .
+        rdfs:seeAlso <https://www.w3.org/TR/shacl/#message> ;
         rdfs:label "MessageExample" ;
         sh:property [  
                 sh:path ex:myProperty ;
