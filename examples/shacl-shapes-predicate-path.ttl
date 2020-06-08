@@ -1,0 +1,16 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:PredicatePathExample
+        a sh:NodeShape ;
+        rdfs:label "Predicate Path Example" ;
+        sh:property [
+                sh:path ex:parent;
+                sh:class ex:Person ;
+        ] .
+
+# Targeting
+ex:PredicatePathExample
+    sh:targetNode ex:bob .

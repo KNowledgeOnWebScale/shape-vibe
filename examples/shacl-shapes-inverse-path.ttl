@@ -1,0 +1,16 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Shape
+ex:InversePathExample
+        a sh:NodeShape ;
+        rdfs:label "Inverse Path Example" ;
+        sh:property [
+                sh:path [ sh:inversePath ex:parent ] ;
+                sh:class ex:Person;
+        ] .
+
+# Targeting
+ex:InversePathExample
+    sh:targetNode ex:bob .
