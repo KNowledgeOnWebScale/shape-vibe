@@ -2,6 +2,8 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ex:PersonShape
+ex:TargetNodeExample
         a sh:NodeShape ;
+        rdfs:seeAlso <https://www.w3.org/TR/shacl/#targetNode> ;
+        rdfs:label "Target node Example" ;
         sh:targetNode ex:alice .

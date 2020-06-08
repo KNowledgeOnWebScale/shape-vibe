@@ -2,6 +2,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ex:PersonShape
-        a sh:NodeShape ;
-        sh:targetClass ex:Person .
+ex:Person
+        rdfs:seeAlso <https://www.w3.org/TR/shacl/#implicit-targetClass> ;
+        rdfs:label "Person class and shape" ;
+        a rdfs:Class, sh:NodeShape .
