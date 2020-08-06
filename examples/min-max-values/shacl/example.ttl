@@ -1,0 +1,51 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+
+ex:locationMeasureSpec
+  a sh:NodeShape ;
+  rdfs:label "Location Measure Specification" ;
+  rdfs:comment "A measurement needs to have valid latitude and longitude as well as a measureDate and at least one comment according to a separeate protocol specification" ;
+  sh:property [
+    sh:path schema:latitude ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:minLength 1 ;
+    sh:maxLength 3 ;
+    sh:minInclusive -90 ;
+    sh:maxExclusive 91 ;
+  ] ;
+  sh:property [
+    sh:path schema:longitude ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:minLength 1 ;
+    sh:maxLength 4 ;
+    sh:minExclusive -181 ;
+    sh:maxInclusive 180 ;
+  ] ;
+  sh:property [
+    sh:path ex:measureDate ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:lessThanOrEquals ex:invalidationDate ;
+    sh:datatype xsd:date ;
+    sh:severity sh:Info ;
+  ] ;
+  sh:property [
+    sh:path ex:invalidationDate ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:date ;
+    sh:deactivated "true"^^xsd:boolean ;
+  ] ;
+  sh:property [
+    sh:path rdfs:comment ;
+    sh:minCount 1 ;
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedValueShape ex:protocolSpec ;
+  ] .
+

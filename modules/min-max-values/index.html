@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ShapeViBe - A qualitative benchmark for RDF constraints visualizations">
+  <meta name="author" content="Sven Lieber">
+
+  <title>ShapeViBe - min-max-values</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/unshacled/shape-vibe/">ShapeViBe</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/unshacled/shape-vibe/coverage/">Constraint Coverage
+            <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/unshacled/shape-vibe/combinations/">Constraint Combinations</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">min-max-values</h1>
+          <p>
+             Several constraint types cover numerical minimum and maximum values.
+             Especially in combination the different constraint types might be confused
+             which results in a bad user experience.
+          </p>
+          <p>
+             This module contains an example covering the following constraint types:
+             <ul>
+               <li>Minimum cardinality (properties)</li>
+               <li>Maximum cardinality (properties)</li>
+               <li>Minimum exclusive (property value)</li>
+               <li>Minimum inclusive (property value)</li>
+               <li>Maximum exclulsive (property value)</li>
+               <li>Maximum inclusive (property value)</li>
+               <li>Minimum length (property value)</li>
+               <li>Maximum length (property value)</li>
+               <li>Qualified minimum count (data shapes)</li>
+               <li>Qualified maximum count (data shapes)</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-sm">
+            <h2>Example</h2>
+            <p>
+             The example is available <a href="/unshacled/shape-vibe/examples/min-max-values/shacl/example.ttl">here</a>
+            </p>
+          </div>
+          <div class="col-sm">
+            <h2>Description</h2>
+            <p>
+              The example contains a fictive specification of geo coordinate measurements with different min/max value constraint types.
+            </p>
+            <p>
+              According to min/max cardinality constraints there should be exactly one 
+              <code>schema:latitude</code>, exactly one <code>schema:longitude</code>, exactly one <code>ex:measureDate</code> and at least one <code>rdfs:comment</code>.
+              The maximum cardinality constraint for <code>ex:invalidationDate</code> is not considered as its property shape is deactivated.
+            </p>
+            <p>
+              According to min and maximum value properties <code>schema:latitude</code> must be between -90 (inclusive) and 91 (exclusive)
+              and <code>schema:longitude</code> must be between -181 (exclusive) and 180 (inclusive).
+            <p>
+            </p>
+              The string length of the <code>schema:latitude</code> value must be between 1 and 3 and for <code>schema:longitude</code> between 1 and 4.
+              The maximum values are chosen to accomodate for the minus symbol of the respective minimum value.
+            </p>
+            <p>
+              At least one of the mandatory <code>rdfs:comment</code> property values must comply to a separate data shape <code>ex:protocolSpec</code>.
+            </p>
+          </div>
+        </div>
+
+
+      </div> <!-- /container -->
+
+    </main>
+
+
+        <hr>
+<footer class="container">
+<p>Contact: <a class="pl-3" href=mailto:Sven.Lieber@ugent.be>sven.lieber@ugent.be</a>
+    
+<p><span><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png"></a></span><span>This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> license. You are free to copy, distribute, transmit, remix, or adapt the work, as long as you reference the work and its authors.</span></p>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.slim.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
