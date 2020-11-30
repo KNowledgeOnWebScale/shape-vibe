@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ShapeViBe - A qualitative benchmark for RDF constraints visualizations">
+  <meta name="author" content="Sven Lieber">
+
+  <title>ShapeViBe - shape-relationships</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/unshacled/shape-vibe/">ShapeViBe</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/unshacled/shape-vibe/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/unshacled/shape-vibe/coverage/">Constraint Coverage
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/unshacled/shape-vibe/combinations/">Constraint Combinations</a>
+            <span class="sr-only">(current)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">shape-relationships</h1>
+          <p>
+             Data shapes can be connected in various ways
+             and since node and property shapes are both data shapes,
+             combinations may also be possible between these different types.
+             A visualization should cover all possible combinations of data shape relationship
+             in a consistent manner for an optimal user experience.
+          </p>
+          <p>
+             This module contains an example covering the following data shape relationships:
+             <ul>
+               <li>a node shape referring with an exclusive disjunction to one node and one property shape</li>
+               <li>a property shape referring with a disjunction to two data shapes</li>
+               <li>a property shape referring with a reuse relationship from its object to a node shape</li>
+               <li>a property shape referring with a reuse relationship from its object to a property shape</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-sm">
+            <h2>Example</h2>
+            <p>
+             The example is available <a href="/unshacled/shape-vibe/examples/shape-relationships/shacl/example.ttl">here</a>
+            </p>
+          </div>
+          <div class="col-sm">
+            <h2>Description</h2>
+            <p>
+              The example contains a fictive specification of DCAT.
+            </p>
+            <p>
+              According to an exclusive disjunction constraint,
+              a <code>dcat:Distribution</code> should either have exactly one property <code>dct:rights</code> of class <code>dct:RightsStatement</code>
+              or be compliant to the <code>ex:licenseShape</code>, i.e. have exactly one property <code>dct:license</code> of class <code>dct:LicenseDocument</code>.
+            </p>
+            <p>
+              According to a disjunction constraint,
+              a <code>dcat:Distribution</code> may have up to three `<code>schema:image</code> properties either of class <code>schema:ImageObject</code> or <code>schema:URL</code>. (remark: the latter one is actually a datatype and not a class, but this example comes from the <a href="https://github.com/factsmission/dcat-ap-ch-shacl">DCAT application profile</a> for data portals in Switzerland.)
+            <p>
+            </p>
+              A <code>dcat:Distribution</code> should have at least one <code>dct:publisher</code> property of class <code>foaf:Agent</code>
+              of which additionally at least one object must comply with the node shape <code>ex:agentShape</code>.
+            </p>
+            <p>
+              A <code>dcat:Distribution</code> must have at least one but maximum two <code>ex:masterRecord</code> properties
+              whose object must comply with a property shape stating that at least one <code>ex:status</code> property of the master record
+              must have the value <code>ex:statusApproved</code> as object.
+            </p>
+          </div>
+        </div>
+
+
+      </div> <!-- /container -->
+
+    </main>
+
+
+        <hr>
+<footer class="container">
+<p>Contact: <a class="pl-3" href=mailto:Sven.Lieber@ugent.be>sven.lieber@ugent.be</a>
+    
+<p><span><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png"></a></span><span>This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> license. You are free to copy, distribute, transmit, remix, or adapt the work, as long as you reference the work and its authors.</span></p>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.slim.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
