@@ -8,7 +8,7 @@
   <meta name="description" content="ShapeViBe - A qualitative benchmark for RDF constraints visualizations">
   <meta name="author" content="Sven Lieber">
 
-  <title>ShapeViBe - Combinations</title>
+  <title>ShapeViBe - Coverage</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="/unshacled/shape-vibe/">ShapeViBe</a>
+      <a class="navbar-brand" href="/">ShapeViBe</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,14 +29,13 @@
           <li class="nav-item">
             <a class="nav-link" href="../index.html">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../coverage/">Constraint Coverage
-            </a>
-          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Constraint Combinations
+            <a class="nav-link" href="#">Constraint Coverage
             <span class="sr-only">(current)</span>
             </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../combinations/">Constraint Combinations</a>
           </li>
         </ul>
       </div>
@@ -48,11 +47,12 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">ShapeViBe - combinations</h1>
+          <h1 class="display-3">ShapeViBe - Coverage</h1>
           <p>
-             This part of the benchmark contains modules to test different combinations of constraints.
-             Modules of this part can thus be used to check if a visual notation or a tool covers different combinations or edge cases of constraints.
+             This part of the benchmark contains modules which are curated from different specifications.
+             Modules of this part can thus be used to check for coverage which different (parts of) specifications.
 
+          <!--<p><a class="btn btn-primary btn-lg" href="#About" role="button">Learn more »</a></p>-->
         </div>
       </div>
 
@@ -60,24 +60,19 @@
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-sm">
-            <h2>min-max-values</h2>
+            <h2>shacl-core-constraints</h2>
             <p>
-               This module contains combinations of several constraint types which represent different minimum and maximum values which could be easily confused.
-               For example minimum cardinality on a property, minimum value of the property's value or minimum length of the property's value.
+               This module contains examples from section 4 of the SHACL specification, core constraint components.
             </p>
-            <p><a class="btn btn-secondary" href="/unshacled/shape-vibe/modules/min-max-values" role="button">View module »</a></p>
+            <p><a class="btn btn-secondary" href="../modules/shacl-core-constraints" role="button">View module »</a></p>
           </div>
-
           <div class="col-sm">
-            <h2>shape-relationships</h2>
+            <h2>shacl-core-shapes</h2>
             <p>
-               This module contains combinations of several possible relationships between data shapes which should be all supported.
-               A logical relationship or other data shape reuse relationship may link to a node or a property shape.
+               This module contains examples from section 2 of the SHACL specification, covering data targeting, severities, SHACL property paths and deactivated shapes.
             </p>
-            <p><a class="btn btn-secondary" href="/unshacled/shape-vibe/modules/shape-relationships" role="button">View module »</a></p>
+            <p><a class="btn btn-secondary" href="../modules/shacl-core-shapes" role="button">View module »</a></p>
           </div>
-
-
         </div>
 
 
@@ -88,7 +83,7 @@
 
         <hr>
 <footer class="container">
-<p>Contact: <a class="pl-3" href=mailto:Sven.Lieber@ugent.be>sven.lieber@ugent.be</a>
+<p>Contact: <a class="pl-3" href="https://sven-lieber.org">Sven Lieber</a>
     
 <p><span><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png"></a></span><span>This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> license. You are free to copy, distribute, transmit, remix, or adapt the work, as long as you reference the work and its authors.</span></p>
   </footer>

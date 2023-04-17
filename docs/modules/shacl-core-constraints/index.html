@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ShapeViBe - A qualitative benchmark for RDF constraints visualizations">
+  <meta name="author" content="Sven Lieber">
+
+  <title>ShapeViBe - shacl-core-constraints</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">ShapeViBe</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="../../coverage/">Constraint Coverage
+            <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../combinations/">Constraint Combinations</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">shacl-core-constraints</h1>
+          <p>
+             This module contains examples from section 4 of the SHACL specification.
+             Section 4 lists the following 8 categories of constraint types:
+             <ul>
+               <li>Value Type</li>
+               <li>Cardinality</li>
+               <li>Value Range</li>
+               <li>String-based</li>
+               <li>Property Pair</li>
+               <li>Logical</li>
+               <li>Shape-based</li>
+               <li>Other</li>
+            </ul>
+	     The examples are available separately allowing to check individually,
+	     but there is also one example file covering all the constraints.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-sm">
+            <h2>combined example</h2>
+            <p>
+             The combined example is available <a href="../../examples/shacl-core-constraints.ttl">here</a>
+            </p>
+          </div>
+          <div class="col-sm">
+            <h2>individual examples</h2>
+            <p>
+	       The following examples, in their most recent version, are covered within this module.
+              <ul>
+                <li><a href="../../examples/shacl-constraint-class.ttl">class constraint</a></li>
+                <li><a href="../../examples/shacl-constraint-datatype.ttl">datatype constraint</a></li>
+                <li><a href="../../examples/shacl-constraint-node-kind.ttl">node kind constraint</a></li>
+                <li><a href="../../examples/shacl-constraint-min-cardinality.ttl">min cardinality constraint</a></li>
+                <li><a href="../../examples/shacl-constraint-max-cardinality.ttl">max cardinality constraint</a></li>
+                <li><a href="../../examples/shacl-constraint-min-exclusive-value.ttl">min exclusive value</a></li>
+                <li><a href="../../examples/shacl-constraint-min-inclusive-value.ttl">min inclusive value</a></li>
+                <li><a href="../../examples/shacl-constraint-max-exclusive-value.ttl">max exclusive value</a></li>
+                <li><a href="../../examples/shacl-constraint-max-inclusive-value.ttl">max inclusive value</a></li>
+                <li><a href="../../examples/shacl-constraint-min-length.ttl">min length</a></li>
+                <li><a href="../../examples/shacl-constraint-max-length.ttl">max length</a></li>
+                <li><a href="../../examples/shacl-constraint-pattern.ttl">pattern</a></li>
+                <li><a href="../../examples/shacl-constraint-pattern-flags.ttl">pattern flags</a></li>
+                <li><a href="../../examples/shacl-constraint-language-in.ttl">language in</a></li>
+                <li><a href="../../examples/shacl-constraint-unique-language.ttl">unique language</a></li>
+                <li><a href="../../examples/shacl-constraint-equals.ttl">equals</a></li>
+                <li><a href="../../examples/shacl-constraint-disjoint.ttl">disjoint</a></li>
+                <li><a href="../../examples/shacl-constraint-less-than.ttl">less than</a></li>
+                <li><a href="../../examples/shacl-constraint-less-than-or-equals.ttl">less than or equals</a></li>
+                <li><a href="../../examples/shacl-constraint-not.ttl">not</a></li>
+                <li><a href="../../examples/shacl-constraint-and.ttl">and</a></li>
+                <li><a href="../../examples/shacl-constraint-or.ttl">or</a></li>
+                <li><a href="../../examples/shacl-constraint-xone.ttl">xone</a></li>
+                <li><a href="../../examples/shacl-constraint-node.ttl">node</a></li>
+                <li><a href="../../examples/shacl-constraint-property.ttl">property</a></li>
+                <li><a href="../../examples/shacl-constraint-qualified-min.ttl">qualified min</a></li>
+                <li><a href="../../examples/shacl-constraint-qualified-max.ttl">qualified max</a></li>
+                <li><a href="../../examples/shacl-constraint-closed.ttl">closed</a></li>
+                <li><a href="../../examples/shacl-constraint-closed-ignored-properties.ttl">ignored properties</a></li>
+                <li><a href="../../examples/shacl-constraint-has-value.ttl">has value</a></li>
+                <li><a href="../../examples/shacl-constraint-value-in.ttl">value in</a></li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+
+      </div> <!-- /container -->
+
+    </main>
+
+
+        <hr>
+<footer class="container">
+<p>Contact: <a class="pl-3" href="https://sven-lieber.org">Sven Lieber</a>
+    
+<p><span><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png"></a></span><span>This work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> license. You are free to copy, distribute, transmit, remix, or adapt the work, as long as you reference the work and its authors.</span></p>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.slim.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
